@@ -1,11 +1,11 @@
 FROM node:latest
 
-WORKDIR /app
-COPY . /app/
+CMD [ "/app/run.sh" ]
 
-ENV PORT=5000
-ENV INTERVAL=2000
+ENV PORT=5000 \
+    INTERVAL=2000
 
 RUN yarn install
 
-CMD [ "/app/run.sh" ]
+WORKDIR /app
+COPY . /app/
