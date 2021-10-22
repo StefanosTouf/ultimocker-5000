@@ -1,5 +1,5 @@
 # Ultimocker
-A simple containerized application for mocking active routes and pinging, usefull as a quick to set up and disposable testing utility.
+A simple containerized application for mocking active routes and pinging, usefull as a quick to set up, and disposable testing utility.
 
 ## Getting started
 
