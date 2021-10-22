@@ -40,8 +40,8 @@ Ultimocker will then set up the configured routes
 Registering route /route/01
 Registering route /route/02
 Ultimocker-5000 initiating in port: 5000. Prepare...
+Received request in /route/01
 Received request in /route/02
-Received request in /route/03
 ```
 
 and will also start pinging
