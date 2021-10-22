@@ -12,8 +12,8 @@ Then create the container with:
 docker create -e PORT=<port> -e INTERVAL=<interval> --name <name> --network host ultimocker
 ```
 where:
-* <port> = exposed port for the app's routes
-* <interval> = the interval between every ping, in milliseconds
+* port = exposed port for the app's routes
+* interval = the interval between every ping, in milliseconds
 
 Then pass the appropriate configuration:
 ```
