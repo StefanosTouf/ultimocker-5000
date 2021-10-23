@@ -1,3 +1,10 @@
+FROM node:latest as builder
+
+WORKDIR /src
+COPY package.json . 
+
+RUN yarn install
+
 FROM node:latest
 
 CMD [ "/app/run.sh" ]
@@ -5,7 +12,6 @@ CMD [ "/app/run.sh" ]
 ENV PORT=5000 \
     INTERVAL=2000
 
-RUN yarn install
-
 WORKDIR /app
-COPY . /app/
+COPY --from=builder /src/node_modules /app/node_modules
+COPY src/ .

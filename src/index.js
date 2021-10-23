@@ -6,6 +6,7 @@ const fs = require('fs/promises');
 
 const toPing = config.ping;
 const pingedRoutes = config['get-pinged'];
+const port = envs.PORT;
 
 const app = express();
 
@@ -18,7 +19,7 @@ pingedRoutes.map(route => {
 });
 
 setInterval(() => {
-  config.ping.forEach(pingee => {
+  toPing.forEach(pingee => {
     console.log(`Pinging ${pingee}`);
     fs.appendFile('logs.txt', `Pinging ${pingee}`);
     axios
@@ -34,6 +35,6 @@ setInterval(() => {
   });
 }, envs.INTERVAL);
 
-app.listen(envs.PORT, () =>
-  console.log(`Ultimocker-5000 initiating in port: ${envs.PORT}. Prepare...`)
+app.listen(port, () =>
+  console.log(`Ultimocker-5000 initiating in port: ${port}. Prepare...`)
 );
