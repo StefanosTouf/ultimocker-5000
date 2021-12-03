@@ -29,8 +29,7 @@ setInterval(() => {
         console.log(`Success`);
       })
       .catch(err => {
-        fs.appendFile('logs.txt', `Error__${err}`);
-        console.log(`Error__${err}`);
+        throw new Error("Couldnt ping");
       });
   });
 }, envs.INTERVAL);
